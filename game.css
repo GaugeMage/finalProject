@@ -1,1 +1,7 @@
-
+//Background and stuff
+body {
+  background-image: url(table.ping);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
