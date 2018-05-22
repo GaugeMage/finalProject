@@ -18,6 +18,48 @@ initialize();
 
 //Picks a random card
 cardNumber = Math.floor(Math.random() * 11) + 2;
+switch (cardNumber){
+    case 2:
+      cardNumber = 2;
+      break;
+    case 3:
+      cardNumber = 3;
+      break;
+    case 4:
+      cardNumber = 4;
+      break;
+    case 5:
+      cardNumber = 5;
+      break;
+    case 6:
+      cardNumber = 6;
+      break;
+    case 7:
+      cardNumber = 7;
+      break;
+    case 8:
+      cardNumber = 8;
+      break;
+    case 9:
+      cardNumber = 9;
+      break;
+    case 10:
+      cardNumber = 10;
+      break;
+    case 11:
+      cardNumber = "A";
+      break;
+    case 12:
+      cardNumber = "J";
+      break;
+    case 13:
+      cardNumber = "K";
+      break;
+    case 14:
+      cardNumber = "Q";
+      break;
+}
+
 cardType = Math.floor(Math.random() * 4) + 1;
 switch (cardType){
   case 1:
@@ -35,7 +77,7 @@ switch (cardType){
 }
 
 //Card
-card = cardNumber+cardType;
+card = cardNumber+cardType + ".png";
 console.log(card);
 
 //Function for inititializing when the game starts
