@@ -61,6 +61,7 @@ switch (cardNumber){
       break;
 }
 
+//Checks for card type. (1: Club 2: Diamond 3: Heart S: Spade)
 cardType = Math.floor(Math.random() * 4) + 1;
 switch (cardType){
   case 1:
