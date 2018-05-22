@@ -11,8 +11,15 @@ body {
 }
 
 /*For the draw pile*/
-img {
-    position: absolute;
-    left: 650px;
-    top: 300px;
+.drawPile {
+  position: absolute;
+  left: 650px;
+  top: 300px;
+}
+
+/*Button to start game*/
+.startGame {
+  position: absolute;
+  left: 0px;
+  top: 750px;
 }
