@@ -5,6 +5,7 @@ finalProject
 */
 
 //Variables
+var card;
 var cardNumber;
 var cardType;
 var cardPicker;
@@ -32,6 +33,10 @@ switch (cardType){
     cardType = "S";
     break;
 }
+
+//Card
+card = cardNumber+cardType;
+console.log(card);
 
 //Function for inititializing when the game starts
 function initialize(){
