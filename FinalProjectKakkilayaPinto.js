@@ -5,6 +5,7 @@ finalProject
 */
 
 //Variables
+var gameStart;
 var card;
 var cardNumber;
 var cardType;
@@ -82,7 +83,15 @@ console.log(card);
 
 //When the player presses the button to start the game
 function startGame(){
-  prompt("This is blackjack.");
+  alert("Here are the rules of Blackjac:");
+  gameStart = prompt("If you don't wanna play now type \'exit\'. If you wanna play Blackjack, type in your name.");
+  if (gameStart == "exit"){
+    //Startgame
+    break;
+  } else {
+    //Start game
+    console.log("hi");
+  }
 }
 
 //Function for inititializing when the game starts
