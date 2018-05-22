@@ -9,3 +9,10 @@ body {
   background-image: url("Pictures/table.png");
   background-size: cover;
 }
+
+/*For the draw pile*/
+img {
+    position: absolute;
+    left: 650px;
+    top: 300px;
+}
