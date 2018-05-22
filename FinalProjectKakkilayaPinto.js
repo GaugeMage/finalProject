@@ -80,6 +80,10 @@ switch (cardType){
 card = cardNumber+cardType + ".png";
 console.log(card);
 
+function startGame(){
+  prompt("This is blackjack.");
+}
+
 //Function for inititializing when the game starts
 function initialize(){
 }
