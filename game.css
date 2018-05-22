@@ -1,7 +1,6 @@
-//Background and stuff
+/*Background*/
 body {
-  background-image: url(/Pictures/table.png);
+  background-image: url("Pictures/table.png");
   background-size: cover;
   background-position: center;
-  height: 100vh;
 }
