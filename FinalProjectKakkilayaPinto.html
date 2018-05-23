@@ -12,12 +12,27 @@ finalProject
   <body>
     <script src = "FinalProjectKakkilayaPinto.js">
     </script>
-    <img src="playingCards/cardBack.png" height="175" width="125" class="drawPile">
-    <form id="buttons">
-      <button type="button" onClick="startGame()" class="startGame">
-          Start Game!
-      </button>
-    </form>
+    
+    <!--Button for game start-->
+    <button type="button" onClick="startGame()" class="startGame" id="startGame">
+      Start Game!
+    </button>
+    <!--Button for rules-->
+    <button type="button" onClick="rules()" class="rules" id="rules">
+      Rules
+    </button>
+    <!--Button for hit-->
+    <button type="button" onClick="hit()" class="hit" id="hit">
+      Hit
+    </button>
+    <!--Button for stand-->
+    <button type="button" onClick="stand()" class="stand" id="stand">
+      Stand
+    </button>
+    <!--Button for restarting game-->
+    <button type="button" onClick="restart()" class="restart" id="restart">
+      Restart Game
+    </button>
     
     <img src = "playingCards/2C.png" height="211" width="138" class= "card1">
     <img src = "playingCards/2D.png" height="211" width="138" class= "card2">
