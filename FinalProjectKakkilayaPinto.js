@@ -90,7 +90,36 @@ function startGame(){
     //Startgame
   } else {
     //Start game
-    console.log("hi");
+    document.getElementById("rules").style.visibility = "visible";
+    document.getElementById("startGame").style.visibility = "hidden";
+    document.getElementById("hit").style.visibility = "visible";
+    document.getElementById("stand").style.visibility = "visible";
+    document.getElementById("restart").style.visibility = "visible";
+  }
+}
+
+//When the player clicks the rules button
+function rules(){
+  alert("Here are the rules of Blackjack:");
+}
+
+//When the player clicks the hit button
+function hit(){
+
+}
+
+//When the player clicks the stand button
+function stand(){
+
+}
+
+//When the player clicks the restart button
+function restart(){
+  userRestart = prompt("Are you sure you want to restart your game?");
+  if (userRestart == "Yes" || userRestart == "yes"){
+
+  } else if (userRestart == "No" || userRestart == "no"){
+
   }
 }
 
