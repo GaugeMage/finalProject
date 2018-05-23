@@ -23,3 +23,66 @@ body {
   left: 0px;
   top: 750px;
 }
+
+body {
+  background-image: url("Pictures/table.png");
+  background-size: cover;
+}
+
+
+.player-score {
+    text-align: top right;
+    font-size: 80px;
+    font-weight: 100;
+    color: #EB4D4D;
+    margin-bottom: 130px;
+}
+
+.computer-score {
+    text-align: top left;
+    font-size: 80px;
+    font-weight: 100;
+    color: #EB4D4D;
+    margin-bottom: 130px;
+}
+
+
+.cpuCard1 {
+    position: absolute;
+    left: 40%;
+    top: 60px;
+    transform: translateX(-50%);
+    height: 211px;
+    width: 138px;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+}
+
+.cpuCard2 {
+    position: absolute;
+    left: 55%;
+    top: 60px;
+    transform: translateX(-50%);
+    height: 211px;
+    width: 138px;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+}
+
+.card1 {
+    position: absolute;
+    left: 40%;
+    top: 500px;
+    transform: translateX(-50%);
+    height: 211px;
+    width: 138px;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+}
+
+.card2 {
+    position: absolute;
+    left: 55%;
+    top: 500px;
+    transform: translateX(-50%);
+    height: 211px;
+    width: 138px;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+}
