@@ -24,11 +24,37 @@ body {
   top: 750px;
 }
 
-body {
-  background-image: url("Pictures/table.png");
-  background-size: cover;
+/*CSS for rule button*/
+.rules {
+  position: absolute;
+  left: 0px;
+  top: 750px;
+  visibility: hidden;
 }
 
+/*CSS for the hit button*/
+.hit {
+  position: absolute;
+  left: 100px;
+  top: 750px;
+  visibility: hidden;
+}
+
+/*CSS for the stand button*/
+.stand {
+  position: absolute;
+  left: 150px;
+  top: 750px;
+  visibility: hidden;
+}
+
+/*CSS for the restart button*/
+.restart {
+  position: absolute;
+  left: 1325px;
+  top: 750px;
+  visibility: hidden;
+}
 
 .player-score {
     text-align: top right;
