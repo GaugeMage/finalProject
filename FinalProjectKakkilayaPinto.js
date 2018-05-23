@@ -84,11 +84,10 @@ console.log(card);
 
 //When the player presses the button to start the game
 function startGame(){
-  alert("Here are the rules of Blackjac:");
+  alert("Here are the rules of Blackjack:");
   gameStart = prompt("If you don't wanna play now type \'exit\'. If you wanna play Blackjack, type in your name.");
   if (gameStart == "exit"){
     //Startgame
-    break;
   } else {
     //Start game
     console.log("hi");
