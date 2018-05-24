@@ -124,17 +124,14 @@ function rules(){
 
 //When the player clicks the hit button
 function hit(){
-    
     if (cardValue < 22){
-    cardPicker();
-    nextCard++;
-    playerScore += cardValue;
-    document.getElementById("player-score").textContent = playerScore;
-    document.querySelector(".card" + nextCard).style.visibility = "visible";
-    }
-    
-    else {
-        
+        cardPicker();
+        nextCard++;
+        playerScore += cardValue;
+        document.getElementById("player-score").textContent = playerScore;
+        document.querySelector(".card" + nextCard).style.visibility = "visible";
+        document.getElementById("card" + nextCard).src = cardSource;
+    } else {
         document.getElementById("roundWinner").textContent = ("Bust");
         stand();
         cpuTurn();
@@ -151,9 +148,9 @@ function stand(){
 function cpuTurn(){
     stand();
     while (cpuScore < 21){    
-    playerScore = playerScore + cardValue;
-    nextCard++;
-    document.getElementById("card" + nextCard).src.visibility = "hidden";
+        playerScore = playerScore + cardValue;
+        nextCard++;
+        document.getElementById("card" + nextCard).src.visibility = "hidden";
     }
 
 }
@@ -164,7 +161,10 @@ function restart(){
   if (userRestart == "Yes" || userRestart == "yes"){
       initialize();
   } else if (userRestart == "No" || userRestart == "no"){
-
+      //Does nothing
+  } else {
+    //If they don't answer yes or no it will keep asking question
+    restart();
   }
 }
 
@@ -189,7 +189,7 @@ function initialize(){
     document.getElementById("cpuCard4").style.visibility = "hidden";
     document.getElementById("cpuCard5").style.visibility = "hidden";
     document.getElementById("cpuCard6").style.visibility = "hidden";
-    document.getElementById("card2").style.visibility = "hidden";
+    document.getElementById("card3").style.visibility = "hidden";
     document.getElementById("card4").style.visibility = "hidden";
     document.getElementById("card5").style.visibility = "hidden";
     document.getElementById("card6").style.visibility = "hidden"; 
@@ -207,5 +207,4 @@ function initialize(){
     document.getElementById("cpuCard2").src = cardSource;
     
 }
-
 
