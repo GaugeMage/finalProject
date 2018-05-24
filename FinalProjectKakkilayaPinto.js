@@ -119,7 +119,7 @@ function startGame(){
 
 //When the player clicks the rules button
 function rules(){
-  alert("Here are the rules of Blackjack: n-Ace & Jack, King, Queen is blackjack and an automatic win \n-Try to get as close to 21 by hitting without going over or you bust \n-Stand when you are satisfied with your hand \n-The computers hand is played after the player stands \n-1 point is given per round for the player closest to 21 \n-Press restart to restart the game \n-Press rules to show rules");   
+  alert("Here are the rules of Blackjack: n-Ace & Jack, King, Queen is blackjack and an automatic win \n-Try to get as close to 21 by hitting without going over or you bust \n-Stand when you are satisfied with your hand \n-The computers hand is played after the player stands \n-1 point is given per round for the player closest to 21 \n-Press restart to restart the game \n-Press rules to show rules");
 }
 
 //When the player clicks the hit button
@@ -142,17 +142,17 @@ function hit(){
 function stand(){
     document.getElementById("hit").style.visibility = "hidden";
     document.getElementById("stand").style.visibility = "hidden";
+    document.getElementById("cpuCard2").style.visibility = "visible";
 }
 
 //After player stands//
 function cpuTurn(){
     stand();
-    while (cpuScore < 21){    
+    while (cpuScore < 21){
         playerScore = playerScore + cardValue;
         nextCard++;
         document.getElementById("card" + nextCard).src.visibility = "hidden";
     }
-
 }
 
 //When the player clicks the restart button
@@ -171,7 +171,7 @@ function restart(){
 
 function newRound(){
     nextCard = 2;
-    
+
 }
 
 //Function for inititializing when the game starts
@@ -192,19 +192,17 @@ function initialize(){
     document.getElementById("card3").style.visibility = "hidden";
     document.getElementById("card4").style.visibility = "hidden";
     document.getElementById("card5").style.visibility = "hidden";
-    document.getElementById("card6").style.visibility = "hidden"; 
-    
+    document.getElementById("card6").style.visibility = "hidden";
+
     cardPicker();
     document.getElementById("card1").src = cardSource;
-    
+
     cardPicker();
     document.getElementById("card2").src = cardSource;
-    
+
     cardPicker();
     document.getElementById("cpuCard1").src = cardSource;
-    
+
     cardPicker();
     document.getElementById("cpuCard2").src = cardSource;
-    
 }
-
