@@ -66,12 +66,31 @@ body {
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
 }
 
+/*Comp score*/
+.roundWinner {
+    position: absolute;
+    font-size: 60px;
+    left: 35%;
+    top: 43%;
+    color: #FFFFFF;
+    visibility: hidden;
+}
+
 /*Player name*/
 .player-name {
     position: absolute;
     font-size: 60px;
-    left: 85%;
-    top: 8px;
+    left: 1%;
+    top: 20%;
+    color: #FFFFFF;
+}
+
+/*Player score*/
+.player-score {
+    position: absolute;
+    font-size: 60px;
+    left: 25%;
+    top: 20%;
     color: #FFFFFF;
 }
 
@@ -79,27 +98,18 @@ body {
 .computer-name {
     position: absolute;
     font-size: 60px;
-    left: 79%;
-    top: 90px;
+    left: 1%;
+    top: 30%;
     color: #FFFFFF;
-}
-
-/*Player score*/
-.player-score {
-    text-align: right;
-    font-size: 60px;
-    font-weight: 100;
-    color: #FFFFFF;
-    margin-bottom: 20px;
 }
 
 /*Comp score*/
 .computer-score {
-    text-align: right;
+    position: absolute;
     font-size: 60px;
-    font-weight: 100;
+    left: 25%;
+    top: 30%;
     color: #FFFFFF;
-    margin-bottom: 130px;
 }
 
 /*Comp card 1: should be faced backward*/
@@ -111,6 +121,7 @@ body {
     height: 211px;
     width: 138px;
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+    visibility: hidden;
 }
 
 /*Comp card 2*/
@@ -122,7 +133,57 @@ body {
     height: 211px;
     width: 138px;
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+    visibility: hidden;
 }
+
+/*Comp card 3*/
+.cpuCard3 {
+    position: absolute;
+    left: 70%;
+    top: 60px;
+    transform: translateX(-50%);
+    height: 211px;
+    width: 138px;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+    visibility: hidden;
+}
+
+/*Comp card 4*/
+.cpuCard4 {
+    position: absolute;
+    left: 75%;
+    top: 60px;
+    transform: translateX(-50%);
+    height: 211px;
+    width: 138px;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+    visibility: hidden;
+}
+
+/*Comp card 5*/
+.cpuCard5 {
+    position: absolute;
+    left: 80%;
+    top: 60px;
+    transform: translateX(-50%);
+    height: 211px;
+    width: 138px;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+    visibility: hidden;
+}
+
+/*Comp card 6*/
+.cpuCard6 {
+    position: absolute;
+    left: 85%;
+    top: 60px;
+    transform: translateX(-50%);
+    height: 211px;
+    width: 138px;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+    visibility: hidden;
+}
+
 
 /*Player card 1*/
 .card1 {
@@ -133,6 +194,7 @@ body {
     height: 211px;
     width: 138px;
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+    visibility: hidden;
 }
 
 /*Player card 2*/
@@ -144,5 +206,51 @@ body {
     height: 211px;
     width: 138px;
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+    visibility: hidden;
 }
+
+.card3 {
+    position: absolute;
+    left: 70%;
+    top: 500px;
+    transform: translateX(-50%);
+    height: 211px;
+    width: 138px;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+    visibility: hidden;
+}
+
+.card4 {
+    position: absolute;
+    left: 75%;
+    top: 500px;
+    transform: translateX(-50%);
+    height: 211px;
+    width: 138px;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+    visibility: hidden;
+}
+
+.card5 {
+    position: absolute;
+    left: 80%;
+    top: 500px;
+    transform: translateX(-50%);
+    height: 211px;
+    width: 138px;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+    visibility: hidden;
+}
+
+.card6 {
+    position: absolute;
+    left: 85%;
+    top: 500px;
+    transform: translateX(-50%);
+    height: 211px;
+    width: 138px;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+    visibility: hidden;
+}
+
 
