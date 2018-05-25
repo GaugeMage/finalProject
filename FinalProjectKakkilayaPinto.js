@@ -260,7 +260,10 @@ function newRound(){
     cpuScore = cpuScore + cardValue;
     
     if (playerScore == 21){
-        cpuTurn();
+        document.getElementById("roundWinner").style.visibility = "visible";
+        document.getElementById("roundWinner").textContent = "Player wins";
+        document.getElementById("player-winsNum").textContent = +1;
+        newRound();
     }
 
 }
@@ -307,7 +310,10 @@ function initialize(){
     cpuScore = cpuScore + cardValue;
     
     if (playerScore == 21){
-        cpuTurn();
+        document.getElementById("roundWinner").style.visibility = "visible";
+        document.getElementById("roundWinner").textContent = "Player wins";
+        document.getElementById("player-winsNum").textContent = +1;
+        newRound();
     }
     
 }
