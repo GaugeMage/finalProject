@@ -128,16 +128,16 @@ function hit(){
         stand();
         cpuTurn();
     }
-    
+
     else if (playerScore < 22){
         cardPicker();
         nextCard++;
         playerScore += cardValue;
         document.getElementById("player-score").textContent = playerScore;
         document.querySelector(".card" + nextCard).style.visibility = "visible";
-        document.getElementById("card" + nextCard).src = cardSource;   
+        document.getElementById("card" + nextCard).src = cardSource;
     }
-        
+
     else if (playerScore > 21){
         document.getElementById("roundWinner").style.visibility = "visible";
         document.getElementById("roundWinner").textContent = "Bust";
@@ -159,27 +159,23 @@ function stand(){
 function cpuTurn(){
     stand();
     while (cpuScore < 22){
-        
         if(cpuScore == 21 || cpuScore >= 17){
-            compareScores(); 
+            compareScores();
         }
-        
-        
         else if (cpuScore < 17){
-        cpuScore = cpuScore + cardValue;
-        document.getElementById("computer-score").textContent = playerScore;
-        nextCard++;
-        document.getElementById("card" + nextCard).style.visibility = "visible";
-        cardPicker();
-        document.getElementById("card" + nextCard).src = cardSource;
+          cpuScore += cardValue;
+          document.getElementById("computer-score").textContent = cpuScore;
+          nextCard++;
+          document.getElementById("card" + nextCard).style.visibility = "visible";
+          cardPicker();
+          document.getElementById("card" + nextCard).src = cardSource;
+      }
     }
-        
-    }
-    
+
     document.getElementById("roundWinner").style.visibility = "visible";
     document.getElementById("roundWinner").textContent = ("Bust");
-    
-   
+
+
 }
 
 //When the player clicks the restart button
@@ -199,7 +195,7 @@ function restart(){
 
 
 function compareScores(){
-    
+
     if (playerScore > cpuScore){
         document.getElementById("roundWinner").style.visibility = "visible";
         document.getElementById("roundWinner").textContent = "Player wins";
@@ -210,12 +206,12 @@ function compareScores(){
         document.getElementById("roundWinner").style.visibility = "visible";
         document.getElementById("roundWinner").textContent = ("Computer wins");
         document.getElementById("computer-winsNum").textContent = +1;
-        newRound();    
+        newRound();
     }
     else if (playerScore == cpuScore){
         document.getElementById("roundWinner").style.visibility = "visible";
         document.getElementById("roundWinner").textContent = ("Push");
-        newRound();    
+        newRound();
     }
 }
 
@@ -245,11 +241,13 @@ function newRound(){
 
     cardPicker();
     document.getElementById("card1").src = cardSource;
-    playerScore = playerScore + cardValue;
+    playerScore += cardValue;
+    document.getElementById("player-score").textContent = playerScore;
 
     cardPicker();
     document.getElementById("card2").src = cardSource;
-    playerScore = playerScore + cardValue;
+    playerScore += cardValue;
+    document.getElementById("player-score").textContent = playerScore;
 
     cardPicker();
     document.getElementById("cpuCard1").src = cardSource;
@@ -258,7 +256,7 @@ function newRound(){
     cardPicker();
     document.getElementById("cpuCard2").src = cardSource;
     cpuScore = cpuScore + cardValue;
-    
+
     if (playerScore == 21){
         document.getElementById("roundWinner").style.visibility = "visible";
         document.getElementById("roundWinner").textContent = "Player wins";
@@ -271,7 +269,7 @@ function newRound(){
 
 //Function for inititializing when the game starts
 function initialize(){
-    
+
     document.getElementById("player-score").textContent = 0;
     document.getElementById("computer-score").textContent = 0;
     document.getElementById("rules").style.visibility = "hidden";
@@ -295,11 +293,13 @@ function initialize(){
 
     cardPicker();
     document.getElementById("card1").src = cardSource;
-    playerScore = playerScore + cardValue;
+    playerScore += cardValue;
+    document.getElementById("player-score").textContent = playerScore;
 
     cardPicker();
     document.getElementById("card2").src = cardSource;
-    playerScore = playerScore + cardValue;
+    playerScore += cardValue;
+    document.getElementById("player-score").textContent = playerScore;
 
     cardPicker();
     document.getElementById("cpuCard1").src = cardSource;
@@ -308,12 +308,12 @@ function initialize(){
     cardPicker();
     document.getElementById("cpuCard2").src = cardSource;
     cpuScore = cpuScore + cardValue;
-    
+
     if (playerScore == 21){
         document.getElementById("roundWinner").style.visibility = "visible";
         document.getElementById("roundWinner").textContent = "Player wins";
         document.getElementById("player-winsNum").textContent = +1;
         newRound();
     }
-    
+
 }
