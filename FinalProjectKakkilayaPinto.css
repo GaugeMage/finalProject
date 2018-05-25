@@ -112,6 +112,43 @@ body {
     color: #FFFFFF;
 }
 
+
+/*Player # of wins name*/
+.player-winsName {
+    position: absolute;
+    font-size: 30px;
+    right: 5%;
+    top: 2%;
+    color: #FFFFFF;
+}
+
+/*Player total wins*/
+.player-winsNum {
+    position: absolute;
+    font-size: 30px;
+    right: 2%;
+    top: 2%;
+    color: #FFFFFF;
+}
+
+/*Comp # of wins name*/
+.computer-winsName {
+    position: absolute;
+    font-size: 30px;
+    right: 5%;
+    top: 6%;
+    color: #FFFFFF;
+}
+
+/*Comp total wins*/
+.computer-winsNum {
+    position: absolute;
+    font-size: 30px;
+    right: 2%;
+    top: 6%;
+    color: #FFFFFF;
+}
+
 /*Comp card 1: should be faced backward*/
 .cpuCard1 {
     position: absolute;
@@ -252,5 +289,3 @@ body {
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
     visibility: hidden;
 }
-
-
