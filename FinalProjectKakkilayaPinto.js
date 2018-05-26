@@ -123,32 +123,30 @@ function rules(){
 
 //After player stands//
 function cpuTurn(){
-    stand();
     cpuScore = 0;
     cardPicker();
     document.getElementById("cpuCard2").src = cardSource;
     document.getElementById("cpuCard2").style.visibility = "visible";
     cpuScore = cpuScore + cardValue;
     document.getElementById("computer-score").textContent = cpuScore;
-  
+
         if(cpuScore == 21 || cpuScore >= 17){
             compareScores;
         }
         else if (cpuScore < 17){
           cpuScore += cardValue;
           document.getElementById("computer-score").textContent = cpuScore;
-          nextCard++;
           document.getElementById("card" + nextCard).style.visibility = "visible";
           cardPicker();
           document.getElementById("card" + nextCard).src = cardSource;
         }
         else if (cpuScore > 21){
-        
+
             document.getElementById("roundWinner").style.visibility = "visible";
             document.getElementById("roundWinner").textContent = "Bust";
                 setTimeout(function() {
-                    newRound();
-                }, delayInMilliseconds); 
+                    initialize();
+                }, delayInMilliseconds);
         }
 }
 
@@ -173,10 +171,10 @@ function hit(){
                 //Time delay for bust to show in anonymous function//
                 setTimeout(function() {
                     document.getElementById("computer-winsNum").textContent = +1;
-                    newRound();
+                    initialize();
                 }, delayInMilliseconds);
             }
-        }  
+        }
 }
 
 //When the player clicks the stand button
@@ -196,7 +194,7 @@ function stand(){
 function restart(){
   userRestart = prompt("Are you sure you want to restart your game?");
   if (userRestart == "Yes" || userRestart == "yes"){
-      newRound();
+      initialize();
       document.getElementById("player-winsNum").textContent = 0;
       document.getElementById("computer-winsNum").textContent = 0;
   } else if (userRestart == "No" || userRestart == "no"){
@@ -215,7 +213,7 @@ function compareScores(){
         document.getElementById("roundWinner").textContent = "Player wins";
         document.getElementById("player-winsNum").textContent = +1;
             setTimeout(function() {
-                    newRound();
+                    initialize();
                 }, delayInMilliseconds);
     }
     else if (playerScore < cpuScore){
@@ -223,7 +221,7 @@ function compareScores(){
         document.getElementById("roundWinner").textContent = ("Computer wins");
         document.getElementById("computer-winsNum").textContent = +1;
             setTimeout(function() {
-                    newRound();
+                    initialize();
                 }, delayInMilliseconds);
 
     }
@@ -231,65 +229,16 @@ function compareScores(){
         document.getElementById("roundWinner").style.visibility = "visible";
         document.getElementById("roundWinner").textContent = ("Push");
             setTimeout(function() {
-                    newRound();
+                    initialize();
                 }, delayInMilliseconds);
     }
 }
 
-//After player of comp win//
-function newRound(){
-    nextCard = 2;
-    playerScore = 0;
-    cpuScore = 0;
-    document.getElementById("player-score").textContent = 0;
-    document.getElementById("computer-score").textContent = 0;
-    document.getElementById("rules").style.visibility = "visible";
-    document.getElementById("startGame").style.visibility = "hidden";
-    document.getElementById("hit").style.visibility = "visible";
-    document.getElementById("stand").style.visibility = "visible";
-    document.getElementById("restart").style.visibility = "visible";
-    document.getElementById("cpuCard1").style.visibility = "visible";
-    document.getElementById("cpuCard2").src = "playingCards/cardBack.png";
-    document.getElementById("cpuCard2").style.visibility = "visible";
-    document.getElementById("card1").style.visibility = "visible";
-    document.getElementById("card2").style.visibility = "visible";
-    document.getElementById("cpuCard3").style.visibility = "hidden";
-    document.getElementById("cpuCard4").style.visibility = "hidden";
-    document.getElementById("cpuCard5").style.visibility = "hidden";
-    document.getElementById("cpuCard6").style.visibility = "hidden";
-    document.getElementById("card3").style.visibility = "hidden";
-    document.getElementById("card4").style.visibility = "hidden";
-    document.getElementById("card5").style.visibility = "hidden";
-    document.getElementById("card6").style.visibility = "hidden";
-    document.getElementById("roundWinner").style.visibility = "hidden";
-
-    cardPicker();
-    document.getElementById("card1").src = cardSource;
-    playerScore += cardValue;
-    document.getElementById("player-score").textContent = playerScore;
-
-    cardPicker();
-    document.getElementById("card2").src = cardSource;
-    playerScore += cardValue;
-    document.getElementById("player-score").textContent = playerScore;
-
-    cardPicker();
-    document.getElementById("cpuCard1").src = cardSource;
-    cpuScore = cpuScore + cardValue;
-
-
-    if (playerScore == 21){
-        document.getElementById("roundWinner").style.visibility = "visible";
-        document.getElementById("roundWinner").textContent = "Player wins";
-        document.getElementById("player-winsNum").textContent = +1;
-        newRound();
-    }
-
-}
-
-
 //Function for inititializing when the game starts
 function initialize(){
+  nextCard = 2;
+  playerScore = 0;
+  cpuScore = 0;
     document.getElementById("player-score").textContent = 0;
     document.getElementById("computer-score").textContent = 0;
     document.getElementById("rules").style.visibility = "hidden";
@@ -331,7 +280,7 @@ function initialize(){
         document.getElementById("roundWinner").style.visibility = "visible";
         document.getElementById("roundWinner").textContent = "Player wins";
         document.getElementById("player-winsNum").textContent = +1;
-        newRound();
+        initialize();
     }
 
 }
