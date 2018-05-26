@@ -69,6 +69,7 @@ body {
 /*Comp score*/
 .roundWinner {
     position: absolute;
+    font-family: Verdana, Geneva, sans-serif;
     font-size: 60px;
     left: 35%;
     top: 43%;
