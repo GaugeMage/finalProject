@@ -5,12 +5,15 @@ finalProject
 */
 
 //Variables
+var aceValue;
+var pCard1 = 0;
+var pCard2 = 0;
 var gameStart;
 var cardSource;
 var cardNumber;
 var cardValue = 0;
 var cardType;
-var nextCard = 2; //Attaches to html card number to show the next card if hti is pressed//
+var nextCard = 2; //Attaches to html card number to show the next card if hit is pressed//
 var cardPicker;
 var playerScore = 0;
 var cpuScore;
@@ -61,7 +64,7 @@ function cardPicker(){
           break;
         case 11:
           cardNumber = "A";
-            cardValue = 11;
+          cardValue = 0;
           break;
         case 12:
           cardNumber = "J";
@@ -101,7 +104,7 @@ function cardPicker(){
 //When the player presses the button to start the game
 function startGame(){
   rules();
-  gameStart = prompt("If you don't wanna play now type \'exit\'. If you wanna play Blackjack, type in your name.");
+  gameStart = prompt("If you don't wanna play now type \'exit\'. If you wanna play Blackjack press enter.");
   if (gameStart == "exit"){
       //Nothing happens
   } else {
@@ -122,7 +125,6 @@ function rules(){
 
 //When the player clicks the hit button
 function hit(){
-
     if (playerScore < 22){
         cardPicker();
         nextCard++;
@@ -130,6 +132,9 @@ function hit(){
         document.getElementById("player-score").textContent = playerScore;
         document.getElementById("card" + nextCard).style.visibility = "visible";
         document.getElementById("card" + nextCard).src = cardSource;
+        if (cardValue == 0){
+          setTimeout(function(){figureAce();}, 1000);
+        }
             //Statements that update the player cards total right after a hit//
             if (playerScore == 21){
                 stand();
@@ -137,11 +142,11 @@ function hit(){
             else if (playerScore > 21){
                 document.getElementById("roundWinner").style.visibility = "visible";
                 document.getElementById("roundWinner").textContent = "Bust";
-                document.getElementById("computer-winsNum").textContent - -1;
+                document.getElementById("computer-winsNum").textContent -= -1;
                 //Time delay for bust to show in anonymous function//
                 setTimeout(function() {newRound();}, 2000);
             }
-        }  
+        }
 }
 
 //When the player clicks the stand button
@@ -158,13 +163,18 @@ function cpuTurn(){
     document.getElementById("cpuCard2").style.visibility = 'visible';
     document.getElementById("cpuCard2").src = cardSource;
     cpuScore += cardValue;
+
+    //If the second computer card is an ace
+    if (cardValue == 0){
+      cpuScore += 11;
+    }
     document.getElementById("computer-score").textContent = cpuScore;
     setTimeout(function() {
-        
+
     if (cpuScore == 21){
         document.getElementById("roundWinner").style.visibility = "visible";
         document.getElementById("roundWinner").textContent = "BLACKJACK! CPU WINS";
-        document.getElementById("computer-winsNum").textContent - -1;
+        document.getElementById("computer-winsNum").textContent -= -1;
         setTimeout(function() {newRound();}, 3000);
         }
     else if(cpuScore >= 17 && cpuScore <= 21){
@@ -174,7 +184,7 @@ function cpuTurn(){
     else if (cpuScore > 21){
         document.getElementById("roundWinner").style.visibility = "visible";
         document.getElementById("roundWinner").textContent = "BUST";
-        document.getElementById("player-winsNum").textContent - -1;
+        document.getElementById("player-winsNum").textContent -= -1;
         setTimeout(function() {newRound();}, 3000);
         }
     else if (cpuScore < 17){
@@ -186,7 +196,16 @@ function cpuTurn(){
             document.getElementById("cpuCard" + nextCard).style.visibility = "visible";
             document.getElementById("cpuCard" + nextCard).src = cardSource;
             cpuScore += cardValue;
+
+            //If the cpu hits an ace
+            if (cardValue == 0 && cpuScore <= 10){
+              cpuScore += 11;
+            } else if (cardValue == 0 && cpuScore >= 11){
+              cpuScore += 1;
+            }
+
             document.getElementById("computer-score").textContent = cpuScore;
+
             //Statements that update the cpu cards total right after a hit//
             if (cpuScore == 21){
                 i = false;
@@ -209,11 +228,11 @@ function cpuTurn(){
         else if (cpuScore > 21){
             document.getElementById("roundWinner").style.visibility = "visible";
             document.getElementById("roundWinner").textContent = "BUST";
-            document.getElementById("player-winsNum").textContent - -1;
+            document.getElementById("player-winsNum").textContent -= -1;
             setTimeout(function() {newRound();}, 3000);
-            } 
+            }
         }
-        
+
     }, 2000);
 }
 
@@ -240,7 +259,7 @@ function compareScores(){
         document.getElementById("roundWinner").textContent = "comparing...";
         setTimeout(function() {console.log("PLAYER WINS");}, 2000);
         document.getElementById("roundWinner").textContent = "PLAYER WINS";
-        document.getElementById("player-winsNum").textContent - -1;
+        document.getElementById("player-winsNum").textContent -= -1;
         setTimeout(function() {newRound();}, 2000);
     }
     else if (playerScore < cpuScore){
@@ -248,7 +267,7 @@ function compareScores(){
         document.getElementById("roundWinner").textContent = "comparing...";
         setTimeout(function() {console.log("CPU WINS");}, 2000);
         document.getElementById("roundWinner").textContent = ("COMPUTER WINS");
-        document.getElementById("computer-winsNum").textContent - -1;
+        document.getElementById("computer-winsNum").textContent -= -1;
         setTimeout(function() {newRound();}, 2000);
     }
     else if (playerScore == cpuScore){
@@ -258,6 +277,21 @@ function compareScores(){
         document.getElementById("roundWinner").textContent = ("PUSH");
         setTimeout(function() {newRound();}, 2000);
     }
+}
+
+//If the player gets an ace.
+function figureAce(){
+  aceValue = prompt("You have an ace. Do you want the ace to have a value of 1 or 11?");
+  if (aceValue == 1){
+    playerScore += 1;
+    document.getElementById("player-score").textContent = playerScore;
+  } else if (aceValue == 11){
+    playerScore += 11;
+    document.getElementById("player-score").textContent = playerScore;
+  } else {
+    alert("That was not an option do it again");
+    figureAce();
+  }
 }
 
 //After player of comp win//
@@ -289,17 +323,30 @@ function newRound(){
 
     cardPicker();
     document.getElementById("card1").src = cardSource;
+    pCard1 = cardValue;
     playerScore += cardValue;
     document.getElementById("player-score").textContent = playerScore;
 
     cardPicker();
     document.getElementById("card2").src = cardSource;
+    pCard2 = cardValue;
     playerScore += cardValue;
     document.getElementById("player-score").textContent = playerScore;
+
+    //Checks to see if either or both cards are aces.
+    if (pCard1 == "0" || pCard2 == "0"){
+      setTimeout(function(){figureAce();}, 1000);
+    }
 
     cardPicker();
     document.getElementById("cpuCard1").src = cardSource;
     cpuScore += cardValue;
+
+    //If the cpu's first card is an ace
+    if (cardValue == 0){
+      cpuScore += 11;
+    }
+
     document.getElementById("computer-score").textContent = cpuScore;
 
     //Checks initial cards//
@@ -314,7 +361,7 @@ function newRound(){
         document.getElementById("roundWinner").textContent = "Bust";
         document.getElementById("computer-winsNum").textContent + 1;
         setTimeout(function() {newRound();}, 3000);
-    } 
+    }
 }
 
 //Function for inititializing when the game starts
@@ -346,18 +393,30 @@ function initialize(){
 
     cardPicker();
     document.getElementById("card1").src = cardSource;
+    pCard1 = cardValue;
     playerScore += cardValue;
     document.getElementById("player-score").textContent = playerScore;
 
     cardPicker();
     document.getElementById("card2").src = cardSource;
+    pCard2 = cardValue;
     playerScore += cardValue;
     document.getElementById("player-score").textContent = playerScore;
+
+    //Checks to see if either or both cards are aces.
+    if (pCard1 == "0" || pCard2 == "0"){
+      setTimeout(function(){figureAce();}, 1000);
+    }
 
     cardPicker();
     document.getElementById("cpuCard1").src = cardSource;
     cpuScore += cardValue;
     document.getElementById("computer-score").textContent = cpuScore;
+
+    //If the cpu's first card is an ace
+    if (cardValue == 0){
+      cpuScore += 11;
+    }
 
     //Checks initial cards//
     if (playerScore == 21){
@@ -372,5 +431,5 @@ function initialize(){
         document.getElementById("computer-winsNum").textContent + 1;
         setTimeout(function() {newRound();}, 3000);
     }
-    
+
 }
