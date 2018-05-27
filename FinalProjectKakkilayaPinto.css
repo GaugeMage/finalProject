@@ -10,6 +10,8 @@ body {
   background-size: cover;
 }
 
+
+
 /*For the draw pile*/
 .drawPile {
   position: absolute;
@@ -20,41 +22,132 @@ body {
 /*Button to start game*/
 .startGame {
   position: absolute;
-  left: 0px;
-  top: 750px;
+  left: 10px;
+  top: 765px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius:12px;
+  border:2px solid #FFFFFF;
 }
+
+.startGame:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/*removes blue border when clicked*/
+.startGame:focus {outline:0;}
 
 /*CSS for rule button*/
 .rules {
   position: absolute;
-  left: 0px;
-  top: 750px;
+  left: 10px;
+  top: 765px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  width: 110px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius:12px;
+  border:2px solid #FFFFFF;
   visibility: hidden;
 }
+
+.rules:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/*removes blue border when clicked*/
+.rules:focus {outline:0;}
 
 /*CSS for the hit button*/
 .hit {
   position: absolute;
-  left: 100px;
-  top: 750px;
+  left: 49%;
+  top: 765px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  width: 110px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius:12px;
+  border:2px solid #FFFFFF;
   visibility: hidden;
 }
+
+/*Hit button hover*/
+.hit:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/*removes blue border when clicked*/
+.hit:focus {outline:0;}
 
 /*CSS for the stand button*/
 .stand {
   position: absolute;
-  left: 150px;
-  top: 750px;
+  left: 39%;
+  top: 765px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  width: 110px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius:12px;
+  border:2px solid #FFFFFF;
   visibility: hidden;
 }
+
+/*stand button hover*/
+.stand:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/*removes blue border when clicked*/
+.stand:focus {outline:0;}
 
 /*CSS for the restart button*/
 .restart {
   position: absolute;
-  left: 1325px;
-  top: 750px;
+  left: 1310px;
+  top: 765px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius:12px;
+  border:2px solid #FFFFFF;
   visibility: hidden;
 }
+
+/*restart button hover*/
+.restart:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/*removes blue border when clicked*/
+.stand:focus {outline:0;}
 
 .logo {
     position: absolute;
