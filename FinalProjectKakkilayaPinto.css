@@ -23,7 +23,7 @@ body {
 .startGame {
   position: absolute;
   left: 10px;
-  top: 765px;
+  top: 700px;
   background-color: #4CAF50;
   border: none;
   color: white;
@@ -47,7 +47,7 @@ body {
 .rules {
   position: absolute;
   left: 10px;
-  top: 765px;
+  top: 700px;
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
@@ -73,7 +73,7 @@ body {
 .hit {
   position: absolute;
   left: 49%;
-  top: 765px;
+  top: 700px;
   background-color: #4CAF50; /* Green */
   border: none;
   width: 110px;
@@ -100,7 +100,7 @@ body {
 .stand {
   position: absolute;
   left: 39%;
-  top: 765px;
+  top: 700px;
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
@@ -127,7 +127,7 @@ body {
 .restart {
   position: absolute;
   left: 1310px;
-  top: 765px;
+  top: 700px;
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
@@ -320,7 +320,7 @@ body {
 .card1 {
     position: absolute;
     left: 40%;
-    top: 500px;
+    top: 450px;
     transform: translateX(-50%);
     height: 211px;
     width: 138px;
@@ -332,7 +332,7 @@ body {
 .card2 {
     position: absolute;
     left: 55%;
-    top: 500px;
+    top: 450px;
     transform: translateX(-50%);
     height: 211px;
     width: 138px;
@@ -343,7 +343,7 @@ body {
 .card3 {
     position: absolute;
     left: 70%;
-    top: 500px;
+    top: 450px;
     transform: translateX(-50%);
     height: 211px;
     width: 138px;
@@ -354,7 +354,7 @@ body {
 .card4 {
     position: absolute;
     left: 75%;
-    top: 500px;
+    top: 450px;
     transform: translateX(-50%);
     height: 211px;
     width: 138px;
@@ -365,7 +365,7 @@ body {
 .card5 {
     position: absolute;
     left: 80%;
-    top: 500px;
+    top: 450px;
     transform: translateX(-50%);
     height: 211px;
     width: 138px;
@@ -376,7 +376,7 @@ body {
 .card6 {
     position: absolute;
     left: 85%;
-    top: 500px;
+    top: 450px;
     transform: translateX(-50%);
     height: 211px;
     width: 138px;
