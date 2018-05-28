@@ -10,8 +10,6 @@ body {
   background-size: cover;
 }
 
-
-
 /*For the draw pile*/
 .drawPile {
   position: absolute;
@@ -151,6 +149,7 @@ body {
 /*removes blue border when clicked*/
 .stand:focus {outline:0;}
 
+/*logo picture*/
 .logo {
     position: absolute;
     left: 130px;
