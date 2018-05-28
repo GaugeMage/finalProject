@@ -24,6 +24,7 @@ var compCardHidden;
 
 //Picks a random card and stores the value//
 function cardPicker(){
+    //Picks the number of the card
     cardNumber = Math.floor(Math.random() * 11) + 2;
     switch (cardNumber){
         case 2:
@@ -97,7 +98,7 @@ function cardPicker(){
         break;
     }
 
-    //Card Source//
+    //Card Source
     cardSource = "playingCards/"+ cardNumber+cardType + ".png";
 }
 
