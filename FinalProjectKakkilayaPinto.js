@@ -15,14 +15,14 @@ var cardValue = 0;
 var cardType;
 var nextCard = 2; //Attaches to html card number to show the next card if hit is pressed//
 var cardPicker;
-var playerScore = 0;
-var cpuScore;
+var playerScore = 0; //Constantly changing value of the players showing cards total//
+var cpuScore; //Constantly changing value of the computers showing cards total//
 var playerCardShown;
 var playerCardHidden;
 var compCardShown;
 var compCardHidden;
 
-//Picks a random card
+//Picks a random card and stores the value//
 function cardPicker(){
     cardNumber = Math.floor(Math.random() * 11) + 2;
     switch (cardNumber){
@@ -97,7 +97,7 @@ function cardPicker(){
         break;
     }
 
-    //Card
+    //Card Source//
     cardSource = "playingCards/"+ cardNumber+cardType + ".png";
 }
 
@@ -120,7 +120,7 @@ function startGame(){
 
 //When the player clicks the rules button
 function rules(){
-  alert("Here are the rules of Blackjack: \n-Ace & Jack, King, Queen is blackjack and an automatic win \n-Try to get as close to 21 by hitting without going over or you bust \n-Stand when you are satisfied with your hand \n-The computers hand is played after the player stands \n-1 point is given per round for the player closest to 21 \n-Press restart to restart the game \n-Press rules to show rules \n-Computer stands on 17 and hits on 16");
+  alert("Here are the rules of Blackjack: \n-Ace & Jack, King, Queen is blackjack and an automatic win \n-Try to get as close to 21 by hitting without going over or you bust \n-Stand when you are satisfied with your hand \n-The computers hand is played after the player stands \n-1 point is given per round for the player closest to 21 \n-Press restart to restart the game \n-Press rules to show rules \n-Computer always stands on 17 and hits on 16 \n-Good Luck!");
 }
 
 //When the player clicks the hit button
@@ -135,7 +135,7 @@ function hit(){
         if (cardValue == 0){
           setTimeout(function(){figureAce();}, 1000);
         }
-            //Statements that update the player cards total right after a hit//
+            //Recounts player cards total right after a hit//
             if (playerScore == 21){
                 stand();
             }
@@ -156,7 +156,7 @@ function stand(){
     setTimeout(function() {cpuTurn();}, 1000);
 }
 
-//cpu turn called after stand
+//Cpu turn called after stand or player has 21 with three cards//
 function cpuTurn(){
     nextCard = 2;
     cardPicker();
@@ -170,7 +170,8 @@ function cpuTurn(){
     }
     document.getElementById("computer-score").textContent = cpuScore;
     setTimeout(function() {
-
+        
+    //Statements to check computers 2nd card//
     if (cpuScore == 21){
         document.getElementById("roundWinner").style.visibility = "visible";
         document.getElementById("roundWinner").textContent = "BLACKJACK! CPU WINS";
@@ -251,7 +252,7 @@ function restart(){
   }
 }
 
-//If neither player busts//
+//If neither player busts and computer is inbetween 21 and 17//
 function compareScores(){
 
     if (playerScore > cpuScore){
@@ -279,7 +280,7 @@ function compareScores(){
     }
 }
 
-//If the player gets an ace.
+//If the player gets an ace
 function figureAce(){
   aceValue = prompt("You have an ace. Do you want the ace to have a value of 1 or 11?");
   if (aceValue == 1){
@@ -327,6 +328,7 @@ function newRound(){
     document.getElementById("card6").style.visibility = "hidden";
     document.getElementById("roundWinner").style.visibility = "hidden";
 
+    //Picks initial cards shown//
     cardPicker();
     document.getElementById("card1").src = cardSource;
     pCard1 = cardValue;
@@ -402,6 +404,7 @@ function initialize(){
     document.getElementById("card6").style.visibility = "hidden";
     document.getElementById("roundWinner").style.visibility = "hidden";
 
+    //Picks initial cards shown//
     cardPicker();
     document.getElementById("card1").src = cardSource;
     pCard1 = cardValue;
