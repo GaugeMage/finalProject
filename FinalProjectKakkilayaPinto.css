@@ -23,7 +23,7 @@ body {
 .startGame {
   position: absolute;
   left: 10px;
-  top: 700px;
+  top: 765px;
   background-color: #4CAF50;
   border: none;
   color: white;
@@ -36,6 +36,7 @@ body {
   border:2px solid #FFFFFF;
 }
 
+/*Gray shadow under button*/
 .startGame:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -47,7 +48,7 @@ body {
 .rules {
   position: absolute;
   left: 10px;
-  top: 700px;
+  top: 765px;
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
@@ -62,6 +63,7 @@ body {
   visibility: hidden;
 }
 
+/*Gray shadow under button*/
 .rules:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -73,7 +75,7 @@ body {
 .hit {
   position: absolute;
   left: 49%;
-  top: 700px;
+  top: 765px;
   background-color: #4CAF50; /* Green */
   border: none;
   width: 110px;
@@ -88,7 +90,7 @@ body {
   visibility: hidden;
 }
 
-/*Hit button hover*/
+/*Gray shadow under button*/
 .hit:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -100,7 +102,7 @@ body {
 .stand {
   position: absolute;
   left: 39%;
-  top: 700px;
+  top: 765px;
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
@@ -115,7 +117,7 @@ body {
   visibility: hidden;
 }
 
-/*stand button hover*/
+/*Gray shadow under button*/
 .stand:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -127,7 +129,7 @@ body {
 .restart {
   position: absolute;
   left: 1310px;
-  top: 700px;
+  top: 765px;
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
@@ -320,7 +322,7 @@ body {
 .card1 {
     position: absolute;
     left: 40%;
-    top: 450px;
+    top: 500px;
     transform: translateX(-50%);
     height: 211px;
     width: 138px;
@@ -332,7 +334,7 @@ body {
 .card2 {
     position: absolute;
     left: 55%;
-    top: 450px;
+    top: 500px;
     transform: translateX(-50%);
     height: 211px;
     width: 138px;
@@ -340,10 +342,11 @@ body {
     visibility: hidden;
 }
 
+/*Player card 3*/
 .card3 {
     position: absolute;
     left: 70%;
-    top: 450px;
+    top: 500px;
     transform: translateX(-50%);
     height: 211px;
     width: 138px;
@@ -351,10 +354,11 @@ body {
     visibility: hidden;
 }
 
+/*Player card 3*/
 .card4 {
     position: absolute;
     left: 75%;
-    top: 450px;
+    top: 500px;
     transform: translateX(-50%);
     height: 211px;
     width: 138px;
@@ -362,10 +366,11 @@ body {
     visibility: hidden;
 }
 
+/*Player card 4*/
 .card5 {
     position: absolute;
     left: 80%;
-    top: 450px;
+    top: 500px;
     transform: translateX(-50%);
     height: 211px;
     width: 138px;
@@ -373,10 +378,11 @@ body {
     visibility: hidden;
 }
 
+/*Player card 5*/
 .card6 {
     position: absolute;
     left: 85%;
-    top: 450px;
+    top: 500px;
     transform: translateX(-50%);
     height: 211px;
     width: 138px;
