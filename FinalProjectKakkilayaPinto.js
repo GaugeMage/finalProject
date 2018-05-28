@@ -288,6 +288,12 @@ function figureAce(){
   } else if (aceValue == 11){
     playerScore += 11;
     document.getElementById("player-score").textContent = playerScore;
+    if (playerScore == 21){
+      document.getElementById("roundWinner").style.visibility = "visible";
+      document.getElementById("roundWinner").textContent = "BLACKJACK! Player wins";
+      document.getElementById("player-winsNum").textContent = +1;
+      setTimeout(function() {newRound();}, 3000);
+    }
   } else {
     alert("That was not an option do it again");
     figureAce();
@@ -334,7 +340,12 @@ function newRound(){
     document.getElementById("player-score").textContent = playerScore;
 
     //Checks to see if either or both cards are aces.
-    if (pCard1 == "0" || pCard2 == "0"){
+    if (pCard1 == "0" && pCard2 != "0"){
+      setTimeout(function(){figureAce();}, 1000);
+    } else if (pCard1 != "0" && pCard2 == "0"){
+      setTimeout(function(){figureAce();}, 1000);
+    } else if (pCard1 == "0" && pCard2 == "0"){
+      setTimeout(function(){figureAce();}, 1000);
       setTimeout(function(){figureAce();}, 1000);
     }
 
